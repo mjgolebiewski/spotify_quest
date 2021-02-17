@@ -17,8 +17,6 @@ spark = SparkSession \
 spotify_path = f'{hdfs_path}/data_by_year.csv'
 spotify = spark.read.format('csv').options(header='true', inferSchema='true').load(spotify_path)
 
-spotify.printSchema()
-spotify.show(truncate = False)
 spotify = spotify.select('year', 'danceability', 'energy')
 
 w = Window.orderBy(spotify.year.desc())
