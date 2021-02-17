@@ -107,8 +107,8 @@ spotify = spotify.select('year', 'danceability', 'energy')
 
 
 '''
-Przygotowanie funckji window - porządkuje zbiór danych malejąco, a następnie
-iteruje po kolejnych parach kolumny 'year' i oblicza różnicę wartości
+Przygotowanie funckji window - porządkuje zbiór danych malejąco na podstawie kolumny
+'year', a następnie iteruje po kolejnych parach wierszy i oblicza różnicę wartości
 kolumn 'danceability' oraz 'energy' w stosunku do roku poprzedniego, dodając wyniki
 do kolumn, kolejno: 'danceability_delta' oraz 'energy_delta'
 '''
