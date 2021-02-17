@@ -27,6 +27,8 @@ spotify = spotify \
                 .withColumn('danceability_delta', spotify.danceability - lead('danceability').over(w)) \
                 .withColumn('energy_delta', spotify.energy - lead('energy').over(w))
 
-spotify.show(truncate = False)
+spotify = spotify \
+                .withColumn('danceability_delta', spotify.danceability_delta.cast(DecimalType(20, 16))) \
+                .withColumn('energy_delta', spotify.energy_delta.cast(DecimalType(20, 16)))
 
 spotify.coalesce(1).write.csv(f'{hdfs_path}/spotify.csv', header = True)
