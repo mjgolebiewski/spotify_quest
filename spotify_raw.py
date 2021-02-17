@@ -29,4 +29,4 @@ spotify = spotify \
 
 spotify.show(truncate = False)
 
-spotify.coalesce(1).write.csv(f'{hdfs_path}/spotify.csv')
+spotify.coalesce(1).write.csv(f'{hdfs_path}/spotify.csv', header = True)

@@ -158,6 +158,6 @@ spotify.show(truncate = False)
 Zapis wyników do pojedynczego pliku csv
 '''
 
-spotify.coalesce(1).write.csv(f'{hdfs_path}/spotify.csv')
+spotify.coalesce(1).write.csv(f'{hdfs_path}/spotify.csv', header = True)
 
 ```
